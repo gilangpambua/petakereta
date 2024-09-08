@@ -33,7 +33,7 @@ const Home = () => {
   return (
     <div className="p-8 grid place-items-center py-[200px]">
       <div>
-        <h1 className="text-center text-3xl font-bold text-gray-800 mb-6">
+        <h1 className="text-center font-bold text-gray-800 mb-6 s:text-[16px] md:text-[24px] lg:text-[32px] xl:text-[42px]">
           BALAI PERAWATAN PERKERETAAPIAN
         </h1>
       </div>
@@ -50,10 +50,10 @@ const Home = () => {
           Upload Image
         </button>
       </div> */}
-      <div className="flex justify-center text-center text-3xl font-bold">
+      <div className="flex justify-center text-center font-bold">
         <button
           onClick={pindah}
-          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition"
+          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition s:text-[16px] md:text-[24px] lg:text-[32px] xl:text-[42px]"
         >
           PETA PERSEBARAN SARANA
         </button>

@@ -26,7 +26,7 @@ const Gallery = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 p-8">
-      <h1 className="text-center text-3xl font-bold text-gray-800 mb-6">
+      <h1 className="text-center font-bold text-gray-800 mb-6 s:text-[18px] sm:text-[22px] md:text-[26px] lg:text-[34px] xl:text-[44px]">
         PETA PERSEBARAN SARANA
       </h1>
       <div className="mt-8 grid grid-cols-1 gap-4">
@@ -35,7 +35,7 @@ const Gallery = () => {
             <img
               src={url}
               alt="Uploaded"
-              className="rounded shadow-lg w-[1000px] h-[500px]"
+              className="rounded shadow-lg lg:w-[1000px] lg:h-[500px]"
             />
           </div>
         ))}
