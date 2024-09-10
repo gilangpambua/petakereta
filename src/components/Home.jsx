@@ -3,6 +3,9 @@ import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { storage } from "../firebase";
 import { v4 } from "uuid";
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/Logo.png";
+import kereta from "../assets/kereta.png";
+import bala from "../assets/bala.png";
 
 const Home = () => {
   const [imageUpload, setImageUpload] = useState(null);
@@ -11,52 +14,45 @@ const Home = () => {
     navigate("/gallery");
   };
 
-  // const uploadFile = () => {
-  //   if (imageUpload == null) {
-  //     alert("Please select an image to upload.");
-  //     return;
-  //   }
-
-  //   const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
-  //   uploadBytes(imageRef, imageUpload)
-  //     .then((snapshot) => {
-  //       getDownloadURL(snapshot.ref).then((url) => {
-  //         alert("Image uploaded successfully!");
-  //         navigate("/gallery");
-  //       });
-  //     })
-  //     .catch(() => {
-  //       alert("Failed to upload image. Please try again.");
-  //     });
-  // };
-
   return (
-    <div className="p-8 grid place-items-center py-[200px]">
-      <div>
-        <h1 className="text-center font-bold text-gray-800 mb-6 s:text-[16px] md:text-[24px] lg:text-[32px] xl:text-[42px]">
-          BALAI PERAWATAN PERKERETAAPIAN
-        </h1>
+    <div className="pl-8 pt-8 pb-8">
+      <div className="flex gap-[20px]">
+        <div>
+          <a href="/">
+            <img
+              className="lg:w-[50px] lg:h-[50px] md:w-[50px] md:h-[50px] sm:w-[40px] sm:h-[40px] xs:w-[30px] xs:h-[30px] s:w-[30px] s:h-[30px]"
+              src={logo}
+              alt=""
+            />
+          </a>
+        </div>
+        <div>
+          <a href="/">
+            <img
+              className="lg:w-[50px] lg:h-[50px] md:w-[50px] md:h-[50px] sm:w-[40px] sm:h-[40px] xs:w-[30px] xs:h-[30px] s:w-[30px] s:h-[30px]"
+              src={bala}
+              alt=""
+            />
+          </a>
+        </div>
       </div>
-      {/* <div className="flex flex-col items-center">
-        <input
-          type="file"
-          onChange={(event) => setImageUpload(event.target.files[0])}
-          className="mb-4 p-2 border border-gray-300 rounded"
-        />
-        <button
-          onClick={uploadFile}
-          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition"
-        >
-          Upload Image
-        </button>
-      </div> */}
-      <div className="flex justify-center text-center font-bold">
-        <button
-          onClick={pindah}
-          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition s:text-[16px] md:text-[24px] lg:text-[32px] xl:text-[42px]"
-        >
-          PETA PERSEBARAN SARANA
-        </button>
+      <div className="s:grid sm:grid md:flex md:place-items-center lg:gap-[95px] lg:pt-[30px] md:gap-[70px] md:pt-[20px] sm:gap-[30px] sm:pt-[50px] xs:grid xs:gap-[30px] xs:pt-[30px] s:gap-[25px] s:pt-[30px]">
+        <div className="lg:pl-[50px] md:pl-[50px]">
+          <div className="font-bold text-gray-800 s:pr-[20px] s:mb-2 xs:mb-2 sm:mb-3 md:mb-6 s:text-[16px] xs:pr-[40px] xs:text-[18px] sm:text-[24px] md:text-[34px] lg:text-[48px] xl:text-[52px]">
+            BALAI PERAWATAN PERKERETAAPIAN
+          </div>
+          <div className="flex font-bold">
+            <button
+              onClick={pindah}
+              className="bg-[#E2CC96] s:py-0.5 s:px-0.5 xs:py-0.5 xs:px-1 sm:py-1 sm:px-2 md:py-2 md:px-4 rounded hover:bg-[#F0C55A] transition s:text-[11px] xs:text-[12px] sm:text-[16px] md:text-[16px] lg:text-[24px] xl:text-[24px]"
+            >
+              PETA PERSEBARAN SARANA
+            </button>
+          </div>
+        </div>
+        <div className="flex justify-end">
+          <img className="flex lg:w-[900px] md:w-[750px]" src={kereta} alt="" />
+        </div>
       </div>
     </div>
   );
